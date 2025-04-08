@@ -6,6 +6,8 @@ Welcome to the digital version of **Riskland**, an engaging and educational mult
 ![image (27)](https://github.com/user-attachments/assets/7aa4322d-6e22-430c-8914-0320314304a5)
 
 
+## Demo
+https://arpitpathak16.github.io/Riskland--Disaster-Management-Board-Game/
 
 ## 🎮 Game Overview
 
