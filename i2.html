@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riskland - Learn About Disaster Prevention</title>
+    <link rel="stylesheet" href="design.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Home Screen -->
+        <div id="home-screen" class="screen active">
+            <div class="logo-container">
+                <h1 class="game-title">Riskland</h1>
+                <h2 class="game-subtitle">The Fun Way to Learn How to Prevent Disasters</h2>
+            </div>
+            <div class="menu-container">
+                <button id="play-btn" class="btn btn-primary">Play Now</button>
+                <button id="rules-btn" class="btn btn-secondary">Rules</button>
+                <button id="about-btn" class="btn btn-secondary">About</button>
+            </div>
+            <div class="footer">
+                <p>A game to educate about disaster prevention and mitigation</p>
+            </div>
+        </div>
+
+        <!-- Rules Screen -->
+        <div id="rules-screen" class="screen">
+            <h2>Rules of the Game</h2>
+            <div class="rules-content">
+                <h3>How to Play:</h3>
+                <p>Begin the game by placing all tokens on the starting line. Taking turns, players advance by rolling the die and moving ahead by the number of spaces indicated.</p>
+                <p>The first player to reach the finish line is the winner. If the die roll is higher than the number of spaces to the finish line, the player must advance to the final space and then move back as many spaces as are left over.</p>
+                
+                <h3>Special Spaces:</h3>
+                <ul>
+                    <li><strong>Question Spaces (Blue):</strong> When landing on these spaces, answer a question correctly to roll again.</li>
+                    <li><strong>Surprise Spaces (Red):</strong> Follow the instructions provided when landing on these spaces.</li>
+                    <li><strong>Instruction Spaces (Green):</strong> Some spaces contain instructions written directly on them. Follow these instructions.</li>
+                </ul>
+                
+                <h3>Purpose:</h3>
+                <p>Riskland helps you understand how certain actions can reduce the impact of disasters, while others can increase our vulnerability. As you follow the path, you'll learn about disaster prevention and how to keep your community safe.</p>
+            </div>
+            <button id="rules-back-btn" class="btn btn-back">Back to Menu</button>
+        </div>
+
+        <!-- About Screen -->
+        <div id="about-screen" class="screen">
+            <h2>About Riskland</h2>
+            <div class="about-content">
+                <p>"Riskland" is an educational board game that deals with disaster prevention. The game conveys messages that help you understand how some actions can reduce the impact of disasters, while others can increase our vulnerability.</p>
+                <p>This digital version maintains the educational value of the original board game while making it accessible to more people through web browsers.</p>
+                <p>The game covers various hazards including:</p>
+                <ul>
+                    <li>Earthquakes</li>
+                    <li>Floods</li>
+                    <li>Tsunamis</li>
+                    <li>Volcanic eruptions</li>
+                    <li>Landslides</li>
+                    <li>Hurricanes and tornadoes</li>
+                </ul>
+                <p>By playing Riskland, you'll learn practical steps to prepare for and mitigate disasters in your community.</p>
+            </div>
+            <button id="about-back-btn" class="btn btn-back">Back to Menu</button>
+        </div>
+
+        <!-- Setup Screen -->
+        <div id="setup-screen" class="screen">
+            <h2>Game Setup</h2>
+            <div class="setup-form">
+                <div class="player-setup">
+                    <h3>Player Setup</h3>
+                    <div id="players-container">
+                        <!-- Player inputs will be added dynamically -->
+                    </div>
+                    <button id="add-player-btn" class="btn btn-small">Add Player</button>
+                </div>
+                
+                <div class="game-options">
+                    <h3>Game Options</h3>
+                    <div class="option">
+                        <label for="difficulty">Difficulty:</label>
+                        <select id="difficulty">
+                            <option value="easy">Easy</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+                    <div class="option">
+                        <label for="hazard-focus">Hazard Focus:</label>
+                        <select id="hazard-focus">
+                            <option value="all" selected>All Hazards</option>
+                            <option value="earthquake">Earthquakes</option>
+                            <option value="flood">Floods</option>
+                            <option value="tsunami">Tsunamis</option>
+                            <option value="volcano">Volcanoes</option>
+                            <option value="hurricane">Hurricanes</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="setup-buttons">
+                <button id="setup-back-btn" class="btn btn-secondary">Back</button>
+                <button id="start-game-btn" class="btn btn-primary">Start Game</button>
+            </div>
+        </div>
+
+        <!-- Game Board Screen -->
+        <div id="game-board-screen" class="screen">
+            <div class="game-header">
+                <h2>Riskland</h2>
+                <div class="game-controls">
+                    <button id="pause-btn" class="btn btn-small">Pause</button>
+                </div>
+            </div>
+            
+            <div class="game-container">
+                <div class="board-container">
+                    <div id="game-board" class="game-board">
+                        <!-- Game board will be dynamically generated here -->
+                    </div>
+                </div>
+                
+                <div class="game-sidebar">
+                    <div class="player-info-container">
+                        <h3>Players</h3>
+                        <div id="player-list" class="player-list">
+                            <!-- Player info will be dynamically generated here -->
+                        </div>
+                    </div>
+                    
+                    <div class="dice-container">
+                        <div id="dice" class="dice">1</div>
+                        <button id="roll-dice-btn" class="btn btn-primary">Roll Dice</button>
+                    </div>
+                    
+                    <div class="turn-info">
+                        <p id="turn-status">Player 1's turn</p>
+                        <p id="move-status"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Question Card Screen -->
+        <div id="question-card-screen" class="screen">
+            <div class="card question-card">
+                <div class="card-header">
+                    <h3>Question</h3>
+                </div>
+                <div class="card-content">
+                    <p id="question-text"></p>
+                    <div id="question-options" class="question-options">
+                        <!-- Options will be dynamically generated here -->
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button id="question-submit-btn" class="btn btn-primary">Submit Answer</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Surprise Card Screen -->
+        <div id="surprise-card-screen" class="screen">
+            <div class="card surprise-card">
+                <div class="card-header">
+                    <h3>Surprise!</h3>
+                </div>
+                <div class="card-content">
+                    <p id="surprise-text"></p>
+                    <div id="surprise-image" class="surprise-image">
+                        <!-- Image will be dynamically inserted here -->
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button id="surprise-continue-btn" class="btn btn-primary">Continue</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Answer Feedback Screen -->
+        <div id="feedback-screen" class="screen">
+            <div class="card feedback-card">
+                <div class="card-header">
+                    <h3 id="feedback-header"></h3>
+                </div>
+                <div class="card-content">
+                    <p id="feedback-text"></p>
+                    <div id="feedback-info" class="feedback-info">
+                        <!-- Additional educational info will be added here -->
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button id="feedback-continue-btn" class="btn btn-primary">Continue</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pause Menu Screen -->
+        <div id="pause-menu-screen" class="screen">
+            <div class="pause-menu">
+                <h2>Game Paused</h2>
+                <button id="resume-btn" class="btn btn-primary">Resume Game</button>
+                <button id="restart-btn" class="btn btn-secondary">Restart Game</button>
+                <button id="main-menu-btn" class="btn btn-secondary">Main Menu</button>
+            </div>
+        </div>
+        
+        <!-- Game Over Screen -->
+        <div id="game-over-screen" class="screen">
+            <div class="game-over-content">
+                <h2>Congratulations!</h2>
+                <p id="winner-text"></p>
+                <div class="game-stats">
+                    <h3>Game Statistics</h3>
+                    <div id="game-stats-content">
+                        <!-- Stats will be dynamically generated here -->
+                    </div>
+                </div>
+                <div class="educational-summary">
+                    <h3>What You've Learned</h3>
+                    <ul id="lessons-learned">
+                        <!-- Lessons will be dynamically generated here -->
+                    </ul>
+                </div>
+                <div class="game-over-buttons">
+                    <button id="play-again-btn" class="btn btn-primary">Play Again</button>
+                    <button id="end-main-menu-btn" class="btn btn-secondary">Main Menu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load JavaScript Modules -->
+    <script type="module">
+        import GameUI from './js/ui.js';
+        
+        // Initialize the game when DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const gameUI = new GameUI();
+        });
+    </script>
+</body>
+</html>
